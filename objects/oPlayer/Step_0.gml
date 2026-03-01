@@ -15,3 +15,12 @@ else
     else if(sprite_index == spr_player_walk_right) sprite_index = spr_player_idle_right;
     else if(sprite_index == spr_player_walk_left) sprite_index = spr_player_idle_left;
 }
+if(keyboard_check_pressed(vk_space)) 
+{
+    var _inst = instance_create_depth(x, y, depth, oAttack);
+    if(sprite_index == spr_player_walk_down or sprite_index == spr_player_idle_down) _inst.image_angle = point_direction(0, 0, 0, 1); 
+    else if(sprite_index == spr_player_walk_up or sprite_index == spr_player_idle_up) _inst.image_angle = point_direction(0, 0, 0, -1); 
+    else if(sprite_index == spr_player_walk_right or sprite_index == spr_player_idle_right) _inst.image_angle = point_direction(0, 0, 1 , 0);
+    else if(sprite_index == spr_player_walk_left or sprite_index == spr_player_idle_left) _inst.image_angle = point_direction(0, 0, -1 , 0);
+    _inst.damage *= damage;
+}
