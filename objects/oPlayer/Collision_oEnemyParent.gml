@@ -7,5 +7,17 @@ if(alarm[0] < 0)
     if (hp <= 0)
     {
         room_restart();
+        if(level == 1)
+        {
+            x = 96;
+            y = 176;
+        }
+        else if(level == 2)
+        {
+            x = 2912;
+            y= 1456;
+        }
+        hp = hp_total
+        fireball = false;
     }
 }
